@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "analytics"."main"."raw_customers" ("customer_id" integer,"name" text,"signup_date" date,"region" text)
+  ;
+    -- dbt seed --
+    
+          COPY "analytics"."main"."raw_customers" FROM 'C:\Users\S S C\dbt-duckdb-analytics\seeds\raw_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

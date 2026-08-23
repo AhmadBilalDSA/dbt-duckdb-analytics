@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "analytics"."main"."raw_orders" ("order_id" integer,"customer_id" integer,"order_date" date,"status" text,"amount" float8)
+  ;
+    -- dbt seed --
+    
+          COPY "analytics"."main"."raw_orders" FROM 'C:\Users\S S C\dbt-duckdb-analytics\seeds\raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

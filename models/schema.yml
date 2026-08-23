@@ -1,0 +1,28 @@
+﻿version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'returned', 'pending']
+
+  - name: fct_customer_orders
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
