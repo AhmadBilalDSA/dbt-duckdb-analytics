@@ -31,11 +31,12 @@ jobs:
         run: |
           pip install dbt-duckdb
       
-      - name: Build dbt Models & Documentation
+      - name: Build dbt Models & Docs
         run: |
           dbt build --profiles-dir .
           dbt docs generate --profiles-dir .
-          python bundle_docs.py
+          mkdir -p ./public
+          cp -r target/* ./public/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
